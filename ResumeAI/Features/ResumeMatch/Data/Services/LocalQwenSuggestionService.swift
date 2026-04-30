@@ -1,6 +1,6 @@
 import Foundation
 
-final class LocalQwenLLMService: ResumeSuggestionGenerating {
+final class LocalQwenSuggestionService: ResumeSuggestionGenerating {
     private let modelFileName = "qwen2.5-0.5b-instruct-q4"
 
     func generateSuggestions(resume: ResumeDocument, job: JobPosting, draft: ResumeMatchDraft) async throws -> GeneratedResumeAdvice {

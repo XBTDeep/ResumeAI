@@ -7,50 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01C9260C8AD8B1EEBFCB169C /* ResumeAI/Presentation/ResumeMatch/ResumeMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17A4A8F5EF32F6DE6475F2 /* ResumeAI/Presentation/ResumeMatch/ResumeMatchView.swift */; };
-		1379CA8816684A2D31216898 /* ResumeAI/Infrastructure/Extraction/ResumeTextExtractionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA25B61422A7D0668DB97D85 /* ResumeAI/Infrastructure/Extraction/ResumeTextExtractionRepository.swift */; };
-		1AB17E034DF5E9AB2ACC104E /* ResumeAI/Presentation/ResumeMatch/ResumeMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFADD1B43C92C3743C716FA /* ResumeAI/Presentation/ResumeMatch/ResumeMatchViewModel.swift */; };
-		1F364E6B92C5F87AC654D207 /* ResumeAI/Presentation/ResumeMatch/Components/ImageImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F73479434E44B851ADB2FA /* ResumeAI/Presentation/ResumeMatch/Components/ImageImportButton.swift */; };
-		40392505E9F90118D393D2E3 /* ResumeAI/Presentation/ResumeMatch/Components/Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D21A587723658F1D1F55AB /* ResumeAI/Presentation/ResumeMatch/Components/Theme.swift */; };
-		416C55738BC3D319E51D443A /* ResumeAI/Domain/UseCases/AnalyzeResumeMatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D86E01EE0AFBC99BDCE2FB5 /* ResumeAI/Domain/UseCases/AnalyzeResumeMatchUseCase.swift */; };
-		52C4F9FE68D4E67A8C4EA466 /* ResumeAI/Domain/Repositories/ResumeTextExtracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07964A667A46BD3D34E0D8F /* ResumeAI/Domain/Repositories/ResumeTextExtracting.swift */; };
-		5C40BAC377D6905D402783D8 /* ResumeAI/Presentation/ResumeMatch/Components/DocumentImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E522981725938BEC64C6214 /* ResumeAI/Presentation/ResumeMatch/Components/DocumentImportButton.swift */; };
-		6E84DA320430F4FD8ADB1D6D /* ResumeAI/Domain/Entities/ResumeMatchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4673506CC48591292531C6 /* ResumeAI/Domain/Entities/ResumeMatchModels.swift */; };
-		74BD799580B5E10F834A5A2D /* ResumeAI/Data/Repositories/AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C453284A9A41304D52A459E2 /* ResumeAI/Data/Repositories/AppDependencyContainer.swift */; };
-		78D9A0FF253099E02C3E50D3 /* ResumeAI/App/ResumeAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD5FA51C2782AC902E19B94 /* ResumeAI/App/ResumeAIApp.swift */; };
-		A15189682FAFD4C48B85FAA8 /* ResumeAI/Presentation/ResumeMatch/Components/AnalysisResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED3B46B2EB6ABDC54AF63EF /* ResumeAI/Presentation/ResumeMatch/Components/AnalysisResultCard.swift */; };
-		A3C8D1A01226E1A39029DEC2 /* ResumeAI/Presentation/ResumeMatch/Components/FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3B5B8BAFB1F9F8CF47310 /* ResumeAI/Presentation/ResumeMatch/Components/FlowLayout.swift */; };
-		BD0DBB19D168F10F013FC742 /* ResumeAI/Infrastructure/JobFetching/JobDescriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6848A5D76C29F6180EDCCC /* ResumeAI/Infrastructure/JobFetching/JobDescriptionRepository.swift */; };
-		BE1577BD80C50BE97C8AF542 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC46060ED96F9D0ECC99E98 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreBreakdownView.swift */; };
-		C57AFA465DD4AD119AC825CF /* ResumeAI/Domain/Services/ResumeScoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852D71446950B6FF0B25415E /* ResumeAI/Domain/Services/ResumeScoringService.swift */; };
-		CFDAC65B017B41A515EAABA2 /* ResumeAI/Infrastructure/LocalLLM/LocalQwenLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0C02DC567C3195B65BA75 /* ResumeAI/Infrastructure/LocalLLM/LocalQwenLLMService.swift */; };
-		E2528C82C5DDC6CDEAC342E9 /* ResumeAI/Domain/Repositories/JobDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E2E19CC4E0CD608174FA60 /* ResumeAI/Domain/Repositories/JobDescriptionProviding.swift */; };
-		EC396307D87D388DEA7E36CC /* ResumeAI/Domain/Repositories/ResumeSuggestionGenerating.swift in Sources */ = {isa = PBXBuildFile; fileRef = C661B757FB981DA33235FDF0 /* ResumeAI/Domain/Repositories/ResumeSuggestionGenerating.swift */; };
-		F3E90DCEED1A4673F24EBA4B /* ResumeAI/Presentation/ResumeMatch/Components/ScoreRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0496151565C33090E58D173 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreRingView.swift */; };
+		0295133D5EFE149BDD7917A3 /* AnalysisResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B80B8D83EEBC72817B08FA /* AnalysisResultCard.swift */; };
+		07AADEC69C811A5414F8DF58 /* ScoreCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2A9EC13417D9ACF58B531 /* ScoreCategory.swift */; };
+		146D6A90DE9601E1ED99CCC5 /* ResumeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04AA235733065B80EE63D4C /* ResumeInput.swift */; };
+		2252D83743CA0D62E9700ACD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E30ACB87F99E4F15BA12D /* DependencyContainer.swift */; };
+		2EFE2E4BB09D2652D172938E /* JobDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B58826BB0CCDB0EF49F199 /* JobDescriptionProviding.swift */; };
+		4908DABE507E6F2FB26C2F3E /* ScoreBreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B20326EA07DBF97F5DE7F7 /* ScoreBreakdownView.swift */; };
+		511BB1ED21C4E1F21934EAE4 /* AnalyzeResumeMatchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2794224D8264CF1CBD87C7AD /* AnalyzeResumeMatchUseCase.swift */; };
+		679728199A0BD79BB88F7D1A /* ResumeMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D35C2ED2E53A91D02F1F19 /* ResumeMatchViewModel.swift */; };
+		67C69A72B4C48F27C4390A55 /* ResumeSuggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAD4442A170308499D5F17 /* ResumeSuggestion.swift */; };
+		6A0E6EE9FE55F0A8AA4960D0 /* ResumeScoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FF3BEE119B7D6678BFABB6 /* ResumeScoringService.swift */; };
+		6ACC3D27643A50795D2A11D0 /* ResumeAIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCAFD120A54804D7FC5A33C /* ResumeAIError.swift */; };
+		70E4C14DC017BBE1A178D613 /* ResumeSuggestionGenerating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7607FF958442C7B205B236 /* ResumeSuggestionGenerating.swift */; };
+		749ADA20FFC0F632A4853F47 /* ResumeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29E51CBCF53D075178AA9DD /* ResumeDocument.swift */; };
+		78D9A0FF253099E02C3E50D3 /* ResumeAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5EECAD67A9B3165034CAB2 /* ResumeAIApp.swift */; };
+		7D96D55BFE4D5A8F4AE46640 /* ResumeMatchAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39919D98FAE408F640467B5 /* ResumeMatchAnalysis.swift */; };
+		88BDE4BC5BBC8F198D1ED7A4 /* JobPosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7D02F5A24F6C7C8BFFB9AD /* JobPosting.swift */; };
+		8CCC3492550ED8E58563E940 /* DocumentImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E416A8A931757841D499FEE /* DocumentImportButton.swift */; };
+		8D1F240145B11F7070850643 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3570DB566F2B8E6E69E6DA8 /* AppTheme.swift */; };
+		A0265791F94FB61A48CFFA39 /* ResumeMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1CADA20AFA35AB8B7C859E /* ResumeMatchView.swift */; };
+		B52E85624108EDA09FA5671B /* ResumeTextExtractionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3B0E43D3107A9E2339F49A /* ResumeTextExtractionRepository.swift */; };
+		B58427875303A98897421A4C /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E054088EF9F163337A7BF9 /* FlowLayout.swift */; };
+		D72BA5FF8D623647755CAAE2 /* LocalQwenSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E62D95018FF8330E3FB2648 /* LocalQwenSuggestionService.swift */; };
+		D9A2F5B733D826D7F4A98C5B /* ImageImportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614C49721A1E98242C673F8F /* ImageImportButton.swift */; };
+		DC51BE04C1B0F9DF2E803DEC /* ScoreRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFCEE9147546B8FE6AC178E /* ScoreRingView.swift */; };
+		EBD57AC1E60DBF1D3FA706C6 /* ResumeTextExtracting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 777157789DE74FA7E98AE788 /* ResumeTextExtracting.swift */; };
+		F40E2C18954EB20DA2015A04 /* JobDescriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651473C8D3DB1C5DC4C96CFF /* JobDescriptionRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2AFADD1B43C92C3743C716FA /* ResumeAI/Presentation/ResumeMatch/ResumeMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/ResumeMatchViewModel.swift; sourceTree = "<group>"; };
-		2F6848A5D76C29F6180EDCCC /* ResumeAI/Infrastructure/JobFetching/JobDescriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Infrastructure/JobFetching/JobDescriptionRepository.swift; sourceTree = "<group>"; };
-		3E522981725938BEC64C6214 /* ResumeAI/Presentation/ResumeMatch/Components/DocumentImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/Components/DocumentImportButton.swift; sourceTree = "<group>"; };
-		4E17A4A8F5EF32F6DE6475F2 /* ResumeAI/Presentation/ResumeMatch/ResumeMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/ResumeMatchView.swift; sourceTree = "<group>"; };
-		58D21A587723658F1D1F55AB /* ResumeAI/Presentation/ResumeMatch/Components/Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/Components/Theme.swift; sourceTree = "<group>"; };
-		65E2E19CC4E0CD608174FA60 /* ResumeAI/Domain/Repositories/JobDescriptionProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Domain/Repositories/JobDescriptionProviding.swift; sourceTree = "<group>"; };
-		6BD5FA51C2782AC902E19B94 /* ResumeAI/App/ResumeAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/App/ResumeAIApp.swift; sourceTree = "<group>"; };
-		7FC3B5B8BAFB1F9F8CF47310 /* ResumeAI/Presentation/ResumeMatch/Components/FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/Components/FlowLayout.swift; sourceTree = "<group>"; };
-		852D71446950B6FF0B25415E /* ResumeAI/Domain/Services/ResumeScoringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Domain/Services/ResumeScoringService.swift; sourceTree = "<group>"; };
-		8B4673506CC48591292531C6 /* ResumeAI/Domain/Entities/ResumeMatchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Domain/Entities/ResumeMatchModels.swift; sourceTree = "<group>"; };
-		8D86E01EE0AFBC99BDCE2FB5 /* ResumeAI/Domain/UseCases/AnalyzeResumeMatchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Domain/UseCases/AnalyzeResumeMatchUseCase.swift; sourceTree = "<group>"; };
+		0E7D02F5A24F6C7C8BFFB9AD /* JobPosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobPosting.swift; path = ResumeAI/Features/ResumeMatch/Domain/Models/JobPosting.swift; sourceTree = SOURCE_ROOT; };
+		0EA2A9EC13417D9ACF58B531 /* ScoreCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScoreCategory.swift; path = ResumeAI/Features/ResumeMatch/Domain/Models/ScoreCategory.swift; sourceTree = SOURCE_ROOT; };
+		0FCAFD120A54804D7FC5A33C /* ResumeAIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeAIError.swift; path = ResumeAI/Core/Errors/ResumeAIError.swift; sourceTree = SOURCE_ROOT; };
+		11B80B8D83EEBC72817B08FA /* AnalysisResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnalysisResultCard.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/AnalysisResultCard.swift; sourceTree = SOURCE_ROOT; };
+		17E054088EF9F163337A7BF9 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlowLayout.swift; path = ResumeAI/Core/Layout/FlowLayout.swift; sourceTree = SOURCE_ROOT; };
+		2794224D8264CF1CBD87C7AD /* AnalyzeResumeMatchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnalyzeResumeMatchUseCase.swift; path = ResumeAI/Features/ResumeMatch/Domain/UseCases/AnalyzeResumeMatchUseCase.swift; sourceTree = SOURCE_ROOT; };
+		2E416A8A931757841D499FEE /* DocumentImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DocumentImportButton.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/DocumentImportButton.swift; sourceTree = SOURCE_ROOT; };
+		3EA2A096CCCE94E4E8E998E8 /* README_MODELS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README_MODELS.md; path = ResumeAI/Resources/README_MODELS.md; sourceTree = SOURCE_ROOT; };
+		54D35C2ED2E53A91D02F1F19 /* ResumeMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeMatchViewModel.swift; path = ResumeAI/Features/ResumeMatch/Presentation/ViewModels/ResumeMatchViewModel.swift; sourceTree = SOURCE_ROOT; };
+		614C49721A1E98242C673F8F /* ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageImportButton.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/ImageImportButton.swift; sourceTree = SOURCE_ROOT; };
+		651473C8D3DB1C5DC4C96CFF /* JobDescriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobDescriptionRepository.swift; path = ResumeAI/Features/ResumeMatch/Data/Repositories/JobDescriptionRepository.swift; sourceTree = SOURCE_ROOT; };
+		777157789DE74FA7E98AE788 /* ResumeTextExtracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeTextExtracting.swift; path = ResumeAI/Features/ResumeMatch/Domain/Protocols/ResumeTextExtracting.swift; sourceTree = SOURCE_ROOT; };
+		78AAD4442A170308499D5F17 /* ResumeSuggestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeSuggestion.swift; path = ResumeAI/Features/ResumeMatch/Domain/Models/ResumeSuggestion.swift; sourceTree = SOURCE_ROOT; };
+		86B58826BB0CCDB0EF49F199 /* JobDescriptionProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobDescriptionProviding.swift; path = ResumeAI/Features/ResumeMatch/Domain/Protocols/JobDescriptionProviding.swift; sourceTree = SOURCE_ROOT; };
+		8E62D95018FF8330E3FB2648 /* LocalQwenSuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalQwenSuggestionService.swift; path = ResumeAI/Features/ResumeMatch/Data/Services/LocalQwenSuggestionService.swift; sourceTree = SOURCE_ROOT; };
+		90AF3BE449D1D46B3FDEFD36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ResumeAI/Resources/Info.plist; sourceTree = SOURCE_ROOT; };
+		9F7607FF958442C7B205B236 /* ResumeSuggestionGenerating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeSuggestionGenerating.swift; path = ResumeAI/Features/ResumeMatch/Domain/Protocols/ResumeSuggestionGenerating.swift; sourceTree = SOURCE_ROOT; };
 		A00000000000000000000010 /* ResumeAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResumeAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A07964A667A46BD3D34E0D8F /* ResumeAI/Domain/Repositories/ResumeTextExtracting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Domain/Repositories/ResumeTextExtracting.swift; sourceTree = "<group>"; };
-		AED3B46B2EB6ABDC54AF63EF /* ResumeAI/Presentation/ResumeMatch/Components/AnalysisResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/Components/AnalysisResultCard.swift; sourceTree = "<group>"; };
-		BDC46060ED96F9D0ECC99E98 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/Components/ScoreBreakdownView.swift; sourceTree = "<group>"; };
-		C453284A9A41304D52A459E2 /* ResumeAI/Data/Repositories/AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Data/Repositories/AppDependencyContainer.swift; sourceTree = "<group>"; };
-		C661B757FB981DA33235FDF0 /* ResumeAI/Domain/Repositories/ResumeSuggestionGenerating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Domain/Repositories/ResumeSuggestionGenerating.swift; sourceTree = "<group>"; };
-		CA25B61422A7D0668DB97D85 /* ResumeAI/Infrastructure/Extraction/ResumeTextExtractionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Infrastructure/Extraction/ResumeTextExtractionRepository.swift; sourceTree = "<group>"; };
-		DBD0C02DC567C3195B65BA75 /* ResumeAI/Infrastructure/LocalLLM/LocalQwenLLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Infrastructure/LocalLLM/LocalQwenLLMService.swift; sourceTree = "<group>"; };
-		E0496151565C33090E58D173 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/Components/ScoreRingView.swift; sourceTree = "<group>"; };
-		F4F73479434E44B851ADB2FA /* ResumeAI/Presentation/ResumeMatch/Components/ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeAI/Presentation/ResumeMatch/Components/ImageImportButton.swift; sourceTree = "<group>"; };
+		A39919D98FAE408F640467B5 /* ResumeMatchAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeMatchAnalysis.swift; path = ResumeAI/Features/ResumeMatch/Domain/Models/ResumeMatchAnalysis.swift; sourceTree = SOURCE_ROOT; };
+		AB5EECAD67A9B3165034CAB2 /* ResumeAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeAIApp.swift; path = ResumeAI/App/ResumeAIApp.swift; sourceTree = SOURCE_ROOT; };
+		B8FF3BEE119B7D6678BFABB6 /* ResumeScoringService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeScoringService.swift; path = ResumeAI/Features/ResumeMatch/Domain/Services/ResumeScoringService.swift; sourceTree = SOURCE_ROOT; };
+		C3570DB566F2B8E6E69E6DA8 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppTheme.swift; path = ResumeAI/Core/DesignSystem/AppTheme.swift; sourceTree = SOURCE_ROOT; };
+		D29E51CBCF53D075178AA9DD /* ResumeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeDocument.swift; path = ResumeAI/Features/ResumeMatch/Domain/Models/ResumeDocument.swift; sourceTree = SOURCE_ROOT; };
+		D40E30ACB87F99E4F15BA12D /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DependencyContainer.swift; path = ResumeAI/App/DependencyContainer.swift; sourceTree = SOURCE_ROOT; };
+		DB3B0E43D3107A9E2339F49A /* ResumeTextExtractionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeTextExtractionRepository.swift; path = ResumeAI/Features/ResumeMatch/Data/Repositories/ResumeTextExtractionRepository.swift; sourceTree = SOURCE_ROOT; };
+		E04AA235733065B80EE63D4C /* ResumeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeInput.swift; path = ResumeAI/Features/ResumeMatch/Domain/Models/ResumeInput.swift; sourceTree = SOURCE_ROOT; };
+		EBFCEE9147546B8FE6AC178E /* ScoreRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScoreRingView.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/ScoreRingView.swift; sourceTree = SOURCE_ROOT; };
+		F5B20326EA07DBF97F5DE7F7 /* ScoreBreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScoreBreakdownView.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/ScoreBreakdownView.swift; sourceTree = SOURCE_ROOT; };
+		FC1CADA20AFA35AB8B7C859E /* ResumeMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeMatchView.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Views/ResumeMatchView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,29 +78,135 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03BC7D4E2122566486A2BFED /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F50352185CC6992D20042EFD /* Views */,
+				564CF2C2FC1B7C3202CA781B /* ViewModels */,
+				9C792EC795239DCEA5E4F3D9 /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		08F5BDC8F5692C3EDB6EF541 /* ResumeAI */ = {
+			isa = PBXGroup;
+			children = (
+				D80313AA5639A1C37F0FCD5F /* App */,
+				DDCAF8BAB26BFD869E415229 /* Features */,
+				A9E8FD11B8887FA983AA330A /* Core */,
+				4CE56F0ABCDA8FB1A286BFB2 /* Resources */,
+			);
+			path = ResumeAI;
+			sourceTree = "<group>";
+		};
+		0CFA51E9EF9DC88A2287FFF1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				86B58826BB0CCDB0EF49F199 /* JobDescriptionProviding.swift */,
+				9F7607FF958442C7B205B236 /* ResumeSuggestionGenerating.swift */,
+				777157789DE74FA7E98AE788 /* ResumeTextExtracting.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		300E5FB89B5720137654FEAC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6DE4CC147A6C83B2DB67EEAE /* Models */,
+				E2BE46514996A1E584A1AF92 /* UseCases */,
+				0CFA51E9EF9DC88A2287FFF1 /* Protocols */,
+				31AD85B5703C03BF4399E539 /* Services */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		30649531D0D7C69CAD4BA6C5 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				17E054088EF9F163337A7BF9 /* FlowLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		31AD85B5703C03BF4399E539 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B8FF3BEE119B7D6678BFABB6 /* ResumeScoringService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		368379D75C8264F34CC37AA6 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				0FCAFD120A54804D7FC5A33C /* ResumeAIError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		3C7DDCFAAB7ADEB00642A171 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				651473C8D3DB1C5DC4C96CFF /* JobDescriptionRepository.swift */,
+				DB3B0E43D3107A9E2339F49A /* ResumeTextExtractionRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		4CE56F0ABCDA8FB1A286BFB2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90AF3BE449D1D46B3FDEFD36 /* Info.plist */,
+				3EA2A096CCCE94E4E8E998E8 /* README_MODELS.md */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		564CF2C2FC1B7C3202CA781B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				54D35C2ED2E53A91D02F1F19 /* ResumeMatchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DE4CC147A6C83B2DB67EEAE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E7D02F5A24F6C7C8BFFB9AD /* JobPosting.swift */,
+				D29E51CBCF53D075178AA9DD /* ResumeDocument.swift */,
+				E04AA235733065B80EE63D4C /* ResumeInput.swift */,
+				A39919D98FAE408F640467B5 /* ResumeMatchAnalysis.swift */,
+				78AAD4442A170308499D5F17 /* ResumeSuggestion.swift */,
+				0EA2A9EC13417D9ACF58B531 /* ScoreCategory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		98A2ADF9509D3C8636A622FF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8E62D95018FF8330E3FB2648 /* LocalQwenSuggestionService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9C792EC795239DCEA5E4F3D9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				11B80B8D83EEBC72817B08FA /* AnalysisResultCard.swift */,
+				2E416A8A931757841D499FEE /* DocumentImportButton.swift */,
+				614C49721A1E98242C673F8F /* ImageImportButton.swift */,
+				F5B20326EA07DBF97F5DE7F7 /* ScoreBreakdownView.swift */,
+				EBFCEE9147546B8FE6AC178E /* ScoreRingView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A00000000000000000000002 = {
 			isa = PBXGroup;
 			children = (
-				6BD5FA51C2782AC902E19B94 /* ResumeAI/App/ResumeAIApp.swift */,
-				C453284A9A41304D52A459E2 /* ResumeAI/Data/Repositories/AppDependencyContainer.swift */,
-				8B4673506CC48591292531C6 /* ResumeAI/Domain/Entities/ResumeMatchModels.swift */,
-				65E2E19CC4E0CD608174FA60 /* ResumeAI/Domain/Repositories/JobDescriptionProviding.swift */,
-				C661B757FB981DA33235FDF0 /* ResumeAI/Domain/Repositories/ResumeSuggestionGenerating.swift */,
-				A07964A667A46BD3D34E0D8F /* ResumeAI/Domain/Repositories/ResumeTextExtracting.swift */,
-				852D71446950B6FF0B25415E /* ResumeAI/Domain/Services/ResumeScoringService.swift */,
-				8D86E01EE0AFBC99BDCE2FB5 /* ResumeAI/Domain/UseCases/AnalyzeResumeMatchUseCase.swift */,
-				CA25B61422A7D0668DB97D85 /* ResumeAI/Infrastructure/Extraction/ResumeTextExtractionRepository.swift */,
-				2F6848A5D76C29F6180EDCCC /* ResumeAI/Infrastructure/JobFetching/JobDescriptionRepository.swift */,
-				DBD0C02DC567C3195B65BA75 /* ResumeAI/Infrastructure/LocalLLM/LocalQwenLLMService.swift */,
-				AED3B46B2EB6ABDC54AF63EF /* ResumeAI/Presentation/ResumeMatch/Components/AnalysisResultCard.swift */,
-				3E522981725938BEC64C6214 /* ResumeAI/Presentation/ResumeMatch/Components/DocumentImportButton.swift */,
-				7FC3B5B8BAFB1F9F8CF47310 /* ResumeAI/Presentation/ResumeMatch/Components/FlowLayout.swift */,
-				F4F73479434E44B851ADB2FA /* ResumeAI/Presentation/ResumeMatch/Components/ImageImportButton.swift */,
-				BDC46060ED96F9D0ECC99E98 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreBreakdownView.swift */,
-				E0496151565C33090E58D173 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreRingView.swift */,
-				58D21A587723658F1D1F55AB /* ResumeAI/Presentation/ResumeMatch/Components/Theme.swift */,
-				4E17A4A8F5EF32F6DE6475F2 /* ResumeAI/Presentation/ResumeMatch/ResumeMatchView.swift */,
-				2AFADD1B43C92C3743C716FA /* ResumeAI/Presentation/ResumeMatch/ResumeMatchViewModel.swift */,
+				08F5BDC8F5692C3EDB6EF541 /* ResumeAI */,
 				A00000000000000000000003 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,6 +217,76 @@
 				A00000000000000000000010 /* ResumeAI.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A9E8FD11B8887FA983AA330A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B03A9AB60F6051EEAE9F6982 /* DesignSystem */,
+				368379D75C8264F34CC37AA6 /* Errors */,
+				30649531D0D7C69CAD4BA6C5 /* Layout */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B03A9AB60F6051EEAE9F6982 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				C3570DB566F2B8E6E69E6DA8 /* AppTheme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		D80313AA5639A1C37F0FCD5F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D40E30ACB87F99E4F15BA12D /* DependencyContainer.swift */,
+				AB5EECAD67A9B3165034CAB2 /* ResumeAIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DDCAF8BAB26BFD869E415229 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				E20C938F52F8E34216819874 /* ResumeMatch */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E20C938F52F8E34216819874 /* ResumeMatch */ = {
+			isa = PBXGroup;
+			children = (
+				03BC7D4E2122566486A2BFED /* Presentation */,
+				300E5FB89B5720137654FEAC /* Domain */,
+				FDDB1A4A3876CFBAAC43AB1D /* Data */,
+			);
+			path = ResumeMatch;
+			sourceTree = "<group>";
+		};
+		E2BE46514996A1E584A1AF92 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				2794224D8264CF1CBD87C7AD /* AnalyzeResumeMatchUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F50352185CC6992D20042EFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC1CADA20AFA35AB8B7C859E /* ResumeMatchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FDDB1A4A3876CFBAAC43AB1D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3C7DDCFAAB7ADEB00642A171 /* Repositories */,
+				98A2ADF9509D3C8636A622FF /* Services */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,26 +357,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78D9A0FF253099E02C3E50D3 /* ResumeAI/App/ResumeAIApp.swift in Sources */,
-				74BD799580B5E10F834A5A2D /* ResumeAI/Data/Repositories/AppDependencyContainer.swift in Sources */,
-				6E84DA320430F4FD8ADB1D6D /* ResumeAI/Domain/Entities/ResumeMatchModels.swift in Sources */,
-				E2528C82C5DDC6CDEAC342E9 /* ResumeAI/Domain/Repositories/JobDescriptionProviding.swift in Sources */,
-				EC396307D87D388DEA7E36CC /* ResumeAI/Domain/Repositories/ResumeSuggestionGenerating.swift in Sources */,
-				52C4F9FE68D4E67A8C4EA466 /* ResumeAI/Domain/Repositories/ResumeTextExtracting.swift in Sources */,
-				C57AFA465DD4AD119AC825CF /* ResumeAI/Domain/Services/ResumeScoringService.swift in Sources */,
-				416C55738BC3D319E51D443A /* ResumeAI/Domain/UseCases/AnalyzeResumeMatchUseCase.swift in Sources */,
-				1379CA8816684A2D31216898 /* ResumeAI/Infrastructure/Extraction/ResumeTextExtractionRepository.swift in Sources */,
-				BD0DBB19D168F10F013FC742 /* ResumeAI/Infrastructure/JobFetching/JobDescriptionRepository.swift in Sources */,
-				CFDAC65B017B41A515EAABA2 /* ResumeAI/Infrastructure/LocalLLM/LocalQwenLLMService.swift in Sources */,
-				A15189682FAFD4C48B85FAA8 /* ResumeAI/Presentation/ResumeMatch/Components/AnalysisResultCard.swift in Sources */,
-				5C40BAC377D6905D402783D8 /* ResumeAI/Presentation/ResumeMatch/Components/DocumentImportButton.swift in Sources */,
-				A3C8D1A01226E1A39029DEC2 /* ResumeAI/Presentation/ResumeMatch/Components/FlowLayout.swift in Sources */,
-				1F364E6B92C5F87AC654D207 /* ResumeAI/Presentation/ResumeMatch/Components/ImageImportButton.swift in Sources */,
-				BE1577BD80C50BE97C8AF542 /* ResumeAI/Presentation/ResumeMatch/Components/ScoreBreakdownView.swift in Sources */,
-				F3E90DCEED1A4673F24EBA4B /* ResumeAI/Presentation/ResumeMatch/Components/ScoreRingView.swift in Sources */,
-				40392505E9F90118D393D2E3 /* ResumeAI/Presentation/ResumeMatch/Components/Theme.swift in Sources */,
-				01C9260C8AD8B1EEBFCB169C /* ResumeAI/Presentation/ResumeMatch/ResumeMatchView.swift in Sources */,
-				1AB17E034DF5E9AB2ACC104E /* ResumeAI/Presentation/ResumeMatch/ResumeMatchViewModel.swift in Sources */,
+				2252D83743CA0D62E9700ACD /* DependencyContainer.swift in Sources */,
+				78D9A0FF253099E02C3E50D3 /* ResumeAIApp.swift in Sources */,
+				8D1F240145B11F7070850643 /* AppTheme.swift in Sources */,
+				6ACC3D27643A50795D2A11D0 /* ResumeAIError.swift in Sources */,
+				B58427875303A98897421A4C /* FlowLayout.swift in Sources */,
+				F40E2C18954EB20DA2015A04 /* JobDescriptionRepository.swift in Sources */,
+				B52E85624108EDA09FA5671B /* ResumeTextExtractionRepository.swift in Sources */,
+				D72BA5FF8D623647755CAAE2 /* LocalQwenSuggestionService.swift in Sources */,
+				88BDE4BC5BBC8F198D1ED7A4 /* JobPosting.swift in Sources */,
+				749ADA20FFC0F632A4853F47 /* ResumeDocument.swift in Sources */,
+				146D6A90DE9601E1ED99CCC5 /* ResumeInput.swift in Sources */,
+				7D96D55BFE4D5A8F4AE46640 /* ResumeMatchAnalysis.swift in Sources */,
+				67C69A72B4C48F27C4390A55 /* ResumeSuggestion.swift in Sources */,
+				07AADEC69C811A5414F8DF58 /* ScoreCategory.swift in Sources */,
+				2EFE2E4BB09D2652D172938E /* JobDescriptionProviding.swift in Sources */,
+				70E4C14DC017BBE1A178D613 /* ResumeSuggestionGenerating.swift in Sources */,
+				EBD57AC1E60DBF1D3FA706C6 /* ResumeTextExtracting.swift in Sources */,
+				6A0E6EE9FE55F0A8AA4960D0 /* ResumeScoringService.swift in Sources */,
+				511BB1ED21C4E1F21934EAE4 /* AnalyzeResumeMatchUseCase.swift in Sources */,
+				0295133D5EFE149BDD7917A3 /* AnalysisResultCard.swift in Sources */,
+				8CCC3492550ED8E58563E940 /* DocumentImportButton.swift in Sources */,
+				D9A2F5B733D826D7F4A98C5B /* ImageImportButton.swift in Sources */,
+				4908DABE507E6F2FB26C2F3E /* ScoreBreakdownView.swift in Sources */,
+				DC51BE04C1B0F9DF2E803DEC /* ScoreRingView.swift in Sources */,
+				679728199A0BD79BB88F7D1A /* ResumeMatchViewModel.swift in Sources */,
+				A0265791F94FB61A48CFFA39 /* ResumeMatchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +505,6 @@
 		A00000000000000000000013 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -317,7 +512,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ResumeAI/Resources/Info.plist;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deep.resumeai.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deepresumeai.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -328,7 +523,6 @@
 		A00000000000000000000014 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -336,7 +530,7 @@
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = ResumeAI/Resources/Info.plist;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deep.resumeai.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deepresumeai.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

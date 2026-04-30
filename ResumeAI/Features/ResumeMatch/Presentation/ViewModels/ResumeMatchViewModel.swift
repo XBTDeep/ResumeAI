@@ -16,7 +16,7 @@ final class ResumeMatchViewModel: ObservableObject {
     private var resumeFileInput: ResumeInput?
     private let analyzeUseCase: AnalyzeResumeMatchUseCase
 
-    init(analyzeUseCase: AnalyzeResumeMatchUseCase = AppDependencyContainer.makeAnalyzeResumeMatchUseCase()) {
+    init(analyzeUseCase: AnalyzeResumeMatchUseCase = DependencyContainer.makeAnalyzeResumeMatchUseCase()) {
         self.analyzeUseCase = analyzeUseCase
     }
 
