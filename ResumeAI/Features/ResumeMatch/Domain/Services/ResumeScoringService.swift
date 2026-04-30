@@ -1,19 +1,50 @@
 import Foundation
 
 struct ResumeScoringService {
+    private struct SkillSignal {
+        let keyword: String
+        let aliases: [String]
+        let weight: Int
+
+        init(_ keyword: String, aliases: [String] = [], weight: Int = 6) {
+            self.keyword = keyword
+            self.aliases = aliases
+            self.weight = weight
+        }
+
+        var searchTerms: [String] {
+            [keyword] + aliases
+        }
+    }
+
     private let stopWords: Set<String> = [
-        "the", "and", "for", "with", "that", "this", "from", "you", "your", "are", "will", "have", "has", "our", "their", "they", "job", "role", "work", "team", "experience", "candidate", "preferred", "required", "requirements", "responsibilities", "ability", "using", "into", "about", "within", "across", "strong", "excellent", "including", "such", "etc", "can", "all", "any", "who", "what", "when", "where", "how", "why", "but", "not", "was", "were", "been", "being", "than", "then", "them", "his", "her", "its", "per", "via"
+        "the", "and", "for", "with", "that", "this", "from", "you", "your", "are", "will", "have", "has", "our", "their", "they", "job", "role", "work", "team", "experience", "candidate", "preferred", "required", "requirements", "responsibilities", "ability", "using", "into", "about", "within", "across", "strong", "excellent", "including", "such", "etc", "can", "all", "any", "who", "what", "when", "where", "how", "why", "but", "not", "was", "were", "been", "being", "than", "then", "them", "his", "her", "its", "per", "via", "company", "employer", "business", "customer", "customers", "client", "clients", "applicant", "applicants", "apply", "applying", "opportunity", "equal", "employment", "benefit", "benefits", "salary", "compensation", "office", "remote", "hybrid", "onsite", "location", "locations", "inc", "llc", "ltd", "corp", "corporation", "limited", "global", "north", "south", "east", "west", "canada", "united", "states", "toronto", "ontario"
     ]
 
     private let technicalSkillHints: Set<String> = [
-        "swift", "swiftui", "ios", "xcode", "uikit", "combine", "async", "api", "rest", "graphql", "aws", "azure", "gcp", "docker", "kubernetes", "ci", "cd", "github", "actions", "jenkins", "sql", "postgres", "mysql", "mongodb", "firebase", "coredata", "python", "java", "javascript", "typescript", "react", "node", "cloud", "security", "testing", "analytics", "observability", "datadog", "splunk", "figma", "agile", "scrum", "leadership", "architecture", "mvvm", "clean", "ocr", "vision", "pdf"
+        "swift", "swiftui", "ios", "xcode", "uikit", "combine", "async", "api", "rest", "graphql", "aws", "azure", "gcp", "docker", "kubernetes", "ci", "cd", "github", "actions", "jenkins", "sql", "postgres", "postgresql", "mysql", "mongodb", "firebase", "coredata", "python", "java", "javascript", "typescript", "react", "node", "cloud", "security", "testing", "analytics", "observability", "datadog", "splunk", "figma", "agile", "scrum", "leadership", "architecture", "mvvm", "ocr", "vision", "pdf", "excel", "tableau", "powerbi", "snowflake", "spark", "kafka", "redis", "terraform", "salesforce", "jira"
+    ]
+
+    private let skillSignals: [SkillSignal] = [
+        SkillSignal("swift"), SkillSignal("swiftui"), SkillSignal("ios", aliases: ["iphone", "ipad", "mobile"]), SkillSignal("xcode"), SkillSignal("uikit"), SkillSignal("combine"),
+        SkillSignal("async/await", aliases: ["async await", "concurrency"], weight: 5), SkillSignal("core data", aliases: ["coredata"]), SkillSignal("ocr", aliases: ["optical character recognition"]), SkillSignal("vision", aliases: ["vision framework"]),
+        SkillSignal("api", aliases: ["apis", "api integration"]), SkillSignal("rest", aliases: ["restful"]), SkillSignal("graphql"), SkillSignal("json"), SkillSignal("microservices", aliases: ["micro services"]),
+        SkillSignal("aws", aliases: ["amazon web services"]), SkillSignal("azure", aliases: ["microsoft azure"]), SkillSignal("gcp", aliases: ["google cloud", "google cloud platform"]), SkillSignal("cloud"),
+        SkillSignal("docker"), SkillSignal("kubernetes", aliases: ["k8s"]), SkillSignal("terraform"), SkillSignal("ci/cd", aliases: ["ci cd", "continuous integration", "continuous delivery", "continuous deployment"]),
+        SkillSignal("github actions", aliases: ["github action"]), SkillSignal("jenkins"), SkillSignal("git"), SkillSignal("jira"),
+        SkillSignal("sql"), SkillSignal("postgresql", aliases: ["postgres"]), SkillSignal("mysql"), SkillSignal("mongodb", aliases: ["mongo"]), SkillSignal("redis"), SkillSignal("firebase"),
+        SkillSignal("python"), SkillSignal("java"), SkillSignal("javascript", aliases: ["js"]), SkillSignal("typescript", aliases: ["ts"]), SkillSignal("react", aliases: ["reactjs", "react.js"]), SkillSignal("node.js", aliases: ["nodejs", "node"]),
+        SkillSignal("html"), SkillSignal("css"), SkillSignal("spark"), SkillSignal("kafka"), SkillSignal("snowflake"),
+        SkillSignal("testing", aliases: ["unit testing", "test automation", "automated tests", "qa"], weight: 5), SkillSignal("security"), SkillSignal("analytics"), SkillSignal("observability"), SkillSignal("datadog"), SkillSignal("splunk"),
+        SkillSignal("figma"), SkillSignal("agile"), SkillSignal("scrum"), SkillSignal("architecture"), SkillSignal("mvvm"), SkillSignal("clean architecture", aliases: ["clean-architecture"]),
+        SkillSignal("excel"), SkillSignal("tableau"), SkillSignal("power bi", aliases: ["powerbi"]), SkillSignal("salesforce"), SkillSignal("project management", aliases: ["program management"], weight: 4), SkillSignal("stakeholder management", aliases: ["stakeholders"], weight: 4), SkillSignal("leadership", weight: 4)
     ]
 
     func score(resume: ResumeDocument, job: JobPosting) -> ResumeMatchDraft {
-        let resumeTerms = weightedTerms(from: resume.text)
-        let jobTerms = weightedTerms(from: job.text)
-        let jobKeywords = extractKeywords(from: jobTerms)
-        let resumeKeywordSet = Set(extractKeywords(from: resumeTerms))
+        let resumeTerms = weightedTerms(from: resume.text, allowGeneralTerms: true)
+        let jobTerms = weightedTerms(from: job.text, allowGeneralTerms: false)
+        let jobKeywords = extractJobKeywords(from: job.text, weightedTerms: jobTerms)
+        let resumeKeywordSet = Set(extractResumeKeywords(from: resume.text, weightedTerms: resumeTerms))
 
         let matched = jobKeywords.filter { resumeKeywordSet.contains($0) }
         let missing = jobKeywords.filter { !resumeKeywordSet.contains($0) }
@@ -50,25 +81,64 @@ struct ResumeScoringService {
         )
     }
 
-    private func weightedTerms(from text: String) -> [String: Int] {
+    private func weightedTerms(from text: String, allowGeneralTerms: Bool) -> [String: Int] {
         let words = text.lowercased()
             .replacingOccurrences(of: "[^a-z0-9+#. ]", with: " ", options: .regularExpression)
             .split(separator: " ")
             .map(String.init)
             .filter { $0.count > 2 && !stopWords.contains($0) }
+            .filter { allowGeneralTerms || technicalSkillHints.contains($0) }
 
         return words.reduce(into: [:]) { counts, word in
             counts[word, default: 0] += technicalSkillHints.contains(word) ? 3 : 1
         }
     }
 
-    private func extractKeywords(from terms: [String: Int]) -> [String] {
-        terms.sorted { lhs, rhs in
+    private func extractJobKeywords(from text: String, weightedTerms: [String: Int]) -> [String] {
+        var scores = skillScores(in: text)
+        for (term, count) in weightedTerms where technicalSkillHints.contains(term) {
+            scores[term, default: 0] += count
+        }
+        return rankedKeywords(from: scores, limit: 24)
+    }
+
+    private func extractResumeKeywords(from text: String, weightedTerms: [String: Int]) -> [String] {
+        var scores = skillScores(in: text)
+        for (term, count) in weightedTerms {
+            scores[term, default: 0] += count
+        }
+        return rankedKeywords(from: scores, limit: 40)
+    }
+
+    private func skillScores(in text: String) -> [String: Int] {
+        var scores: [String: Int] = [:]
+        for signal in skillSignals {
+            let hits = signal.searchTerms.reduce(0) { total, term in
+                total + occurrenceCount(of: term, in: text)
+            }
+            if hits > 0 {
+                scores[signal.keyword, default: 0] += signal.weight + hits
+            }
+        }
+        return scores
+    }
+
+    private func rankedKeywords(from scores: [String: Int], limit: Int) -> [String] {
+        scores.sorted { lhs, rhs in
             if lhs.value == rhs.value { return lhs.key < rhs.key }
             return lhs.value > rhs.value
         }
-        .prefix(28)
+        .prefix(limit)
         .map(\.key)
+    }
+
+    private func occurrenceCount(of term: String, in text: String) -> Int {
+        let escaped = NSRegularExpression.escapedPattern(for: term.lowercased())
+            .replacingOccurrences(of: "\\ ", with: #"\s+"#)
+        let pattern = #"(?<![a-z0-9+#.])"# + escaped + #"(?![a-z0-9+#.])"#
+        let range = NSRange(text.lowercased().startIndex..., in: text.lowercased())
+        return (try? NSRegularExpression(pattern: pattern, options: [.caseInsensitive]))?
+            .numberOfMatches(in: text.lowercased(), range: range) ?? 0
     }
 
     private func normalizedScore(matched: Int, total: Int, max: Int) -> Int {
@@ -77,7 +147,7 @@ struct ResumeScoringService {
     }
 
     private func scoreRequiredSignals(resumeTerms: [String: Int], jobTerms: [String: Int]) -> Int {
-        let requiredSignals = technicalSkillHints.filter { jobTerms[$0] != nil }
+        let requiredSignals = Set(jobTerms.keys).intersection(technicalSkillHints)
         guard !requiredSignals.isEmpty else { return 7 }
         let hits = requiredSignals.filter { resumeTerms[$0] != nil }.count
         return max(3, normalizedScore(matched: hits, total: requiredSignals.count, max: 10))
