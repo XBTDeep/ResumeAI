@@ -55,11 +55,13 @@ Job:
 - Public job URL
 - Pasted job description fallback
 
-## Local Qwen Plan
+## Local Qwen Model
 
-The app is ready for `Qwen2.5-0.5B-Instruct-GGUF` behind `LocalQwenSuggestionService`. The current implementation keeps everything local and returns deterministic advice until a llama.cpp/Core ML runner and bundled GGUF model are added.
+The app runs `Qwen3.5-0.8B-GGUF` behind `LocalQwenSuggestionService` for local ATS-style feedback.
 
-Recommended model: `Qwen2.5-0.5B-Instruct-GGUF`, 4-bit quantized.
+Required model file: `ResumeAI/Resources/Models/Qwen3.5-0.8B.q4_k_m.gguf`.
+
+There is no deterministic advice fallback. If the model is missing or returns invalid JSON, the app shows an error instead of fabricated gaps, suggestions, or rewrites.
 
 ## Build
 

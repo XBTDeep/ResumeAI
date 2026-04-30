@@ -70,7 +70,7 @@ final class ResumeMatchViewModel: ObservableObject {
             loadingMessage = "Comparing skills and requirements..."
             try await Task.sleep(nanoseconds: 250_000_000)
 
-            loadingMessage = "Writing your scorecard..."
+            loadingMessage = "Loading local Qwen..."
             let result = try await analyzeUseCase.execute(resumeInput: resumeInput, jobInput: jobInput)
             withAnimation(.spring(response: 0.45, dampingFraction: 0.9)) {
                 analysis = result
