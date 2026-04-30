@@ -1,5 +1,6 @@
 import PhotosUI
 import SwiftUI
+import UIKit
 import UniformTypeIdentifiers
 
 struct ResumeMatchView: View {
@@ -140,13 +141,51 @@ struct ResumeMatchView: View {
                 .frame(maxWidth: .infinity)
 
                 if viewModel.inputMode == .url {
-                    TextField("https://company.com/careers/job-posting", text: $viewModel.jobURLText)
+                    HStack(spacing: 10) {
+                        Button {
+                            if let pasteboardText = UIPasteboard.general.string {
+                                viewModel.jobURLText = pasteboardText
+                            }
+                        } label: {
+                            Label("Paste", systemImage: "doc.on.clipboard")
+                                .font(.caption.weight(.bold))
+                                .labelStyle(.titleAndIcon)
+                        }
+                        .buttonStyle(.plain)
+                        .foregroundStyle(Color.resumeBlue)
+
+                        TextField(
+                            "",
+                            text: $viewModel.jobURLText,
+                            prompt: Text("position link here")
+                                .foregroundColor(Color.resumeMuted.opacity(0.45))
+                        )
                         .keyboardType(.URL)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
                         .focused($focusedField, equals: .jobURL)
-                        .padding(15)
-                        .background(Color.resumeSurface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .foregroundStyle(Color.resumeInk)
+                        .tint(Color.resumeBlue)
+
+                        if !viewModel.jobURLText.isEmpty {
+                            Button {
+                                viewModel.jobURLText = ""
+                            } label: {
+                                Image(systemName: "xmark.circle.fill")
+                                    .font(.system(size: 17, weight: .semibold))
+                            }
+                            .buttonStyle(.plain)
+                            .foregroundStyle(Color.resumeMuted.opacity(0.65))
+                            .accessibilityLabel("Clear job link")
+                        }
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 12)
+                    .background(Color.resumeSurface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .stroke(Color.resumeBorder, lineWidth: 1)
+                    )
                 } else {
                     TextEditor(text: $viewModel.jobText)
                         .focused($focusedField, equals: .jobText)

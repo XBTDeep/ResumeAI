@@ -313,12 +313,18 @@ final class LocalQwenSuggestionService: ResumeSuggestionGenerating {
         }
 
         return bullets.prefix(2).map { bullet in
-            let cleaned = bullet.trimmingCharacters(in: CharacterSet(charactersIn: "-• \t."))
+            let cleaned = cleanedBulletForRewrite(bullet)
             return BulletRewrite(
                 before: cleaned,
                 after: "\(cleaned), with clearer emphasis on \(focus), ownership, and measurable impact."
             )
         }
+    }
+
+    private func cleanedBulletForRewrite(_ bullet: String) -> String {
+        bullet
+            .trimmingCharacters(in: CharacterSet(charactersIn: "-•* \t\n\r"))
+            .trimmingCharacters(in: CharacterSet(charactersIn: " ,.;:\n\r\t"))
     }
 
     private func extractBullets(from resumeText: String) -> [String] {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0295133D5EFE149BDD7917A3 /* AnalysisResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B80B8D83EEBC72817B08FA /* AnalysisResultCard.swift */; };
 		07AADEC69C811A5414F8DF58 /* ScoreCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA2A9EC13417D9ACF58B531 /* ScoreCategory.swift */; };
+		0B73C39C8CE54F8092EE679A /* AnalysisResultSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447AF322BD724C24B1665F28 /* AnalysisResultSections.swift */; };
 		146D6A90DE9601E1ED99CCC5 /* ResumeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04AA235733065B80EE63D4C /* ResumeInput.swift */; };
 		2252D83743CA0D62E9700ACD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40E30ACB87F99E4F15BA12D /* DependencyContainer.swift */; };
 		2EFE2E4BB09D2652D172938E /* JobDescriptionProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B58826BB0CCDB0EF49F199 /* JobDescriptionProviding.swift */; };
@@ -46,6 +47,7 @@
 		2794224D8264CF1CBD87C7AD /* AnalyzeResumeMatchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnalyzeResumeMatchUseCase.swift; path = ResumeAI/Features/ResumeMatch/Domain/UseCases/AnalyzeResumeMatchUseCase.swift; sourceTree = SOURCE_ROOT; };
 		2E416A8A931757841D499FEE /* DocumentImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DocumentImportButton.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/DocumentImportButton.swift; sourceTree = SOURCE_ROOT; };
 		3EA2A096CCCE94E4E8E998E8 /* README_MODELS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README_MODELS.md; path = ResumeAI/Resources/README_MODELS.md; sourceTree = SOURCE_ROOT; };
+		447AF322BD724C24B1665F28 /* AnalysisResultSections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnalysisResultSections.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/AnalysisResultSections.swift; sourceTree = SOURCE_ROOT; };
 		54D35C2ED2E53A91D02F1F19 /* ResumeMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResumeMatchViewModel.swift; path = ResumeAI/Features/ResumeMatch/Presentation/ViewModels/ResumeMatchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		614C49721A1E98242C673F8F /* ImageImportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageImportButton.swift; path = ResumeAI/Features/ResumeMatch/Presentation/Components/ImageImportButton.swift; sourceTree = SOURCE_ROOT; };
 		651473C8D3DB1C5DC4C96CFF /* JobDescriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobDescriptionRepository.swift; path = ResumeAI/Features/ResumeMatch/Data/Repositories/JobDescriptionRepository.swift; sourceTree = SOURCE_ROOT; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				11B80B8D83EEBC72817B08FA /* AnalysisResultCard.swift */,
+				447AF322BD724C24B1665F28 /* AnalysisResultSections.swift */,
 				2E416A8A931757841D499FEE /* DocumentImportButton.swift */,
 				614C49721A1E98242C673F8F /* ImageImportButton.swift */,
 				F5B20326EA07DBF97F5DE7F7 /* ScoreBreakdownView.swift */,
@@ -389,6 +392,7 @@
 				6A0E6EE9FE55F0A8AA4960D0 /* ResumeScoringService.swift in Sources */,
 				511BB1ED21C4E1F21934EAE4 /* AnalyzeResumeMatchUseCase.swift in Sources */,
 				0295133D5EFE149BDD7917A3 /* AnalysisResultCard.swift in Sources */,
+				0B73C39C8CE54F8092EE679A /* AnalysisResultSections.swift in Sources */,
 				8CCC3492550ED8E58563E940 /* DocumentImportButton.swift in Sources */,
 				D9A2F5B733D826D7F4A98C5B /* ImageImportButton.swift in Sources */,
 				4908DABE507E6F2FB26C2F3E /* ScoreBreakdownView.swift in Sources */,
