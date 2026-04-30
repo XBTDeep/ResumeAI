@@ -1,4 +1,6 @@
+import PhotosUI
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct ResumeMatchView: View {
     @StateObject var viewModel: ResumeMatchViewModel
@@ -50,7 +52,7 @@ struct ResumeMatchView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 16) {
-            HStack(spacing: 12) {
+            HStack(alignment: .bottom, spacing: 12) {
                 ZStack {
                     RoundedRectangle(cornerRadius: 16, style: .continuous)
                         .fill(LinearGradient(colors: [.resumeBlue, .resumeTeal], startPoint: .topLeading, endPoint: .bottomTrailing))
@@ -64,15 +66,11 @@ struct ResumeMatchView: View {
                     Text("ResumeAI")
                         .font(.system(.largeTitle, design: .rounded).weight(.bold))
                         .foregroundStyle(Color.resumeInk)
-                    Text("Local resume matching for better applications")
-                        .font(.subheadline.weight(.medium))
-                        .foregroundStyle(Color.resumeMuted)
                 }
                 Spacer()
             }
 
             HStack(spacing: 10) {
-                Label("Runs locally", systemImage: "lock.shield.fill")
                 Label("PDF + Image OCR", systemImage: "text.viewfinder")
                 Label("Job links", systemImage: "link")
             }
@@ -84,7 +82,7 @@ struct ResumeMatchView: View {
     }
 
     private var inputCard: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Compare your resume to a job")
@@ -97,55 +95,49 @@ struct ResumeMatchView: View {
                 Spacer()
             }
 
-            VStack(alignment: .leading, spacing: 12) {
+            Divider()
+                .overlay(Color.resumeBorder)
+                .padding(.vertical, 2)
+
+            VStack(alignment: .leading, spacing: 10) {
                 Text("Resume")
                     .font(.headline)
                     .foregroundStyle(Color.resumeInk)
-                HStack(spacing: 10) {
-                    DocumentImportButton { viewModel.attachDocument(url: $0) }
-                    ImageImportButton { viewModel.attachImage(url: $0) }
-                    if !viewModel.selectedResumeName.isEmpty {
+
+                ResumeUploadButton(
+                    onDocumentPick: { viewModel.attachDocument(url: $0) },
+                    onImagePick: { viewModel.attachImage(url: $0) }
+                )
+                if !viewModel.selectedResumeName.isEmpty {
+                    HStack(spacing: 10) {
+                        Label(viewModel.selectedResumeName, systemImage: "checkmark.circle.fill")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(Color.resumeTeal)
+                            .lineLimit(1)
+                        Spacer(minLength: 0)
                         Button("Clear") { viewModel.clearResumeAttachment() }
+                            .font(.caption.weight(.semibold))
                             .buttonStyle(.borderless)
                     }
                 }
-                if !viewModel.selectedResumeName.isEmpty {
-                    Label(viewModel.selectedResumeName, systemImage: "checkmark.circle.fill")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.resumeTeal)
-                }
-                TextEditor(text: $viewModel.resumeText)
-                    .focused($focusedField, equals: .resume)
-                    .frame(minHeight: 124)
-                    .padding(10)
-                    .scrollContentBackground(.hidden)
-                    .background(Color.resumeSurface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                    .overlay(alignment: .topLeading) {
-                        if viewModel.resumeText.isEmpty {
-                            Text("Or paste your resume text here...")
-                                .font(.subheadline)
-                                .foregroundStyle(Color.resumeMuted.opacity(0.75))
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 18)
-                                .allowsHitTesting(false)
-                        }
-                    }
             }
 
+            Divider()
+                .overlay(Color.resumeBorder)
+                .padding(.vertical, 2)
+
             VStack(alignment: .leading, spacing: 12) {
-                HStack {
-                    Text("Job")
-                        .font(.headline)
-                        .foregroundStyle(Color.resumeInk)
-                    Spacer()
-                    Picker("Job input", selection: $viewModel.inputMode) {
-                        ForEach(JobInputMode.allCases) { mode in
-                            Text(mode.rawValue).tag(mode)
-                        }
+                Text("Job")
+                    .font(.headline)
+                    .foregroundStyle(Color.resumeInk)
+
+                Picker("Job input", selection: $viewModel.inputMode) {
+                    ForEach(JobInputMode.allCases) { mode in
+                        Text(mode.rawValue).tag(mode)
                     }
-                    .pickerStyle(.segmented)
-                    .frame(maxWidth: 360)
                 }
+                .pickerStyle(.segmented)
+                .frame(maxWidth: .infinity)
 
                 if viewModel.inputMode == .url {
                     TextField("https://company.com/careers/job-posting", text: $viewModel.jobURLText)
@@ -162,16 +154,6 @@ struct ResumeMatchView: View {
                         .padding(10)
                         .scrollContentBackground(.hidden)
                         .background(Color.resumeSurface, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                        .overlay(alignment: .topLeading) {
-                            if viewModel.jobText.isEmpty {
-                                Text("Paste the full job description here...")
-                                    .font(.subheadline)
-                                    .foregroundStyle(Color.resumeMuted.opacity(0.75))
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 18)
-                                    .allowsHitTesting(false)
-                            }
-                        }
                 }
             }
 
@@ -251,8 +233,70 @@ struct ResumeMatchView: View {
     }
 
     private enum Field {
-        case resume
         case jobURL
         case jobText
+    }
+}
+
+private struct ResumeUploadButton: View {
+    let onDocumentPick: (URL) -> Void
+    let onImagePick: (URL) -> Void
+
+    @State private var isOptionsPresented = false
+    @State private var isDocumentImporterPresented = false
+    @State private var isImagePickerPresented = false
+    @State private var selectedImageItem: PhotosPickerItem?
+
+    var body: some View {
+        Button {
+            isOptionsPresented = true
+        } label: {
+            Label("Upload Resume", systemImage: "square.and.arrow.up.fill")
+                .font(.subheadline.weight(.semibold))
+                .lineLimit(1)
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(Color.resumeBlue)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity)
+        .background(Color.resumeBlue.opacity(0.08), in: Capsule())
+        .confirmationDialog("Upload Resume", isPresented: $isOptionsPresented, titleVisibility: .visible) {
+            Button("Document") {
+                isDocumentImporterPresented = true
+            }
+            Button("Image") {
+                isImagePickerPresented = true
+            }
+            Button("Cancel", role: .cancel) {}
+        }
+        .fileImporter(
+            isPresented: $isDocumentImporterPresented,
+            allowedContentTypes: [.pdf, .plainText, .rtf],
+            allowsMultipleSelection: false
+        ) { result in
+            if case .success(let urls) = result, let url = urls.first {
+                onDocumentPick(url)
+            }
+        }
+        .photosPicker(
+            isPresented: $isImagePickerPresented,
+            selection: $selectedImageItem,
+            matching: .images
+        )
+        .onChange(of: selectedImageItem) { _, item in
+            guard let item else { return }
+            Task {
+                if let data = try? await item.loadTransferable(type: Data.self) {
+                    let url = FileManager.default.temporaryDirectory
+                        .appendingPathComponent("resume-image-\(UUID().uuidString).jpg")
+                    try? data.write(to: url)
+                    await MainActor.run {
+                        onImagePick(url)
+                        selectedImageItem = nil
+                    }
+                }
+            }
+        }
     }
 }

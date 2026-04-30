@@ -9,7 +9,12 @@ struct ImageImportButton: View {
         PhotosPicker(selection: $selectedItem, matching: .images) {
             Label("Image", systemImage: "photo.fill.on.rectangle.fill")
         }
-        .buttonStyle(.bordered)
+        .buttonStyle(.plain)
+        .font(.subheadline.weight(.semibold))
+        .foregroundStyle(Color.resumeBlue)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
+        .background(Color.resumeBlue.opacity(0.08), in: Capsule())
         .onChange(of: selectedItem) { _, item in
             guard let item else { return }
             Task {

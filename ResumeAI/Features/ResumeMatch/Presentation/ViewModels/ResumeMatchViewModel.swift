@@ -25,7 +25,7 @@ final class ResumeMatchViewModel: ObservableObject {
     }
 
     private var hasResumeInput: Bool {
-        !resumeText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || resumeFileInput != nil
+        resumeFileInput != nil
     }
 
     private var hasJobInput: Bool {
@@ -84,8 +84,6 @@ final class ResumeMatchViewModel: ObservableObject {
     }
 
     private func makeResumeInput() -> ResumeInput {
-        let pasted = resumeText.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !pasted.isEmpty { return .pastedText(pasted) }
         return resumeFileInput ?? .pastedText("")
     }
 
@@ -103,7 +101,7 @@ final class ResumeMatchViewModel: ObservableObject {
 
 enum JobInputMode: String, CaseIterable, Identifiable {
     case url = "Job Link"
-    case paste = "Paste Description"
+    case paste = "Job Text"
 
     var id: String { rawValue }
 }

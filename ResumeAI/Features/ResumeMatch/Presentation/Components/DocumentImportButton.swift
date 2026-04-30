@@ -11,7 +11,12 @@ struct DocumentImportButton: View {
         } label: {
             Label("Document", systemImage: "doc.text.fill")
         }
-        .buttonStyle(.bordered)
+        .buttonStyle(.plain)
+        .font(.subheadline.weight(.semibold))
+        .foregroundStyle(Color.resumeBlue)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
+        .background(Color.resumeBlue.opacity(0.08), in: Capsule())
         .fileImporter(
             isPresented: $isImporterPresented,
             allowedContentTypes: [.pdf, .plainText, .rtf],
